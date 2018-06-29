@@ -10,10 +10,10 @@ export default function configureStore(history: History, initialState?: Applicat
     const windowIfDefined = typeof window === 'undefined' ? null : window as any;
     // If devTools is installed, connect to it
     const devToolsExtension = windowIfDefined && windowIfDefined.__REDUX_DEVTOOLS_EXTENSION__ as () => GenericStoreEnhancer;
-    const createStoreWithMiddleware = compose(
+    const createStoreWithMiddleware = (compose(
         applyMiddleware(thunk, routerMiddleware(history)),
         devToolsExtension ? devToolsExtension() : <S>(next: StoreEnhancerStoreCreator<S>) => next
-    )(createStore);
+    )(createStore)) as (a: any,b: any) => any;
 
     // Combine all reducers and instantiate the app-wide store instance
     const allReducers = buildRootReducer(reducers);

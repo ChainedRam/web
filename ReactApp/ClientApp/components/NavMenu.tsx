@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
-        return <div className='main-nav'>
+        return <div className=''>
                 <div className='navbar navbar-inverse'>
                 <div className='navbar-header'>
                     <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
@@ -12,9 +12,8 @@ export class NavMenu extends React.Component<{}, {}> {
                         <span className='icon-bar'></span>
                         <span className='icon-bar'></span>
                     </button>
-                    <Link className='navbar-brand' to={ '/' }>ReactApp</Link>
+                        <Link className='navbar-brand' to={ '/' }>ReactApp</Link>
                 </div>
-                <div className='clearfix'></div>
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
                         <li>
@@ -23,13 +22,18 @@ export class NavMenu extends React.Component<{}, {}> {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={ '/counter' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Counter
+                            <NavLink to={ '/projects' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-education'></span> Projects
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={ '/fetchdata' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Fetch data
+                            <NavLink to={ '/about' } activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> About Us
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={'/contact'} activeClassName='active'>
+                                <span className='glyphicon glyphicon-th-list'></span> Contact Us
                             </NavLink>
                         </li>
                     </ul>
